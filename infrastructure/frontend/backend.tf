@@ -6,7 +6,7 @@
 
 terraform {
   backend "s3" {
-    bucket  = "cdec-alpha-terraform-state-pb3738"
+    bucket  = "cdec-alpha-terraform-state-pb373"
     key     = "frontend/terraform.tfstate"
     region  = "us-east-1"
     encrypt = true
