@@ -9,7 +9,7 @@ application = "cdec-alpha-pb373"
 
 # Optional override; when omitted, dns_record_name is used as the CloudFront alias.
 # cloudfront_aliases  = ["www.example.com"]
-# acm_certificate_arn = "arn:aws:acm:us-east-1:627963863715:certificate/4c8af250-8b32-4d45-b2fb-0ac88ab76000"  # must be us-east-1
+ acm_certificate_arn = "arn:aws:acm:us-east-1:627963863715:certificate/4c8af250-8b32-4d45-b2fb-0ac88ab76000"  # must be us-east-1
 
 # Route 53 — creates a hosted zone by default; omit route53_zone_id to create new
 # Do not use example.com / example.net / example.org (reserved by AWS)
