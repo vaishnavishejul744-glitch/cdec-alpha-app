@@ -1,3 +1,4 @@
+```groovy
 // Frontend Terraform pipeline
 // Requires: terraform, aws-frontend-terraform credentials, terraform.tfvars and backend.hcl in TF_DIR
 
@@ -29,6 +30,21 @@ pipeline {
                 ]]) {
                     dir(env.TF_DIR) {
                         sh 'terraform init -input=false'
+                    }
+                }
+            }
+        }
+
+        stage('Terraform State Check') {
+            steps {
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'aws-frontend-terraform',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                    dir(env.TF_DIR) {
+                        sh 'terraform state list'
                     }
                 }
             }
@@ -73,3 +89,4 @@ pipeline {
         }
     }
 }
+```
