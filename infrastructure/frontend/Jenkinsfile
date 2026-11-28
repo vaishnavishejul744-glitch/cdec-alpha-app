@@ -1,4 +1,4 @@
-```groovy
+
 // Frontend Terraform pipeline
 // Requires: terraform, aws-frontend-terraform credentials, terraform.tfvars and backend.hcl in TF_DIR
 
